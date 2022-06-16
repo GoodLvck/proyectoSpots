@@ -1,0 +1,10 @@
+Testsuite: com.proyectospots.UsuarioSpec
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 2,655 sec
+------------- Standard Output ---------------
+--Output from test toString--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from test toString--
+------------- ---------------- ---------------
+
+Testcase: test toString took 2,576 sec
