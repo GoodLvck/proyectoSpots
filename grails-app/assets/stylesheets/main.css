@@ -9,45 +9,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* BASE LAYOUT */
-
-html {
-	background-color: #ddd;
-	background-image: -moz-linear-gradient(center top, #aaa, #ddd);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aaa), color-stop(1, #ddd));
-	background-image: linear-gradient(top, #aaa, #ddd);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaaaaa', EndColorStr = '#dddddd');
-	background-repeat: no-repeat;
-	height: 100%;
-	/* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-
-html.no-cssgradients {
-	background-color: #aaa;
-}
-
-.ie6 html {
-	height: 100%;
-}
-
-html * {
-	margin: 0;
-}
-
 body {
 	background: #ffffff;
 	color: #333333;
 	margin: 0 auto;
-	max-width: 960px;
-	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-	   -moz-box-shadow: 0 0 0.3em #255b17;
-	-webkit-box-shadow: 0 0 0.3em #255b17;
-	        box-shadow: 0 0 0.3em #255b17;
 }
 
-#grailsLogo {
+#psLogo {
 	background-color: #abbf78;
 }
 
@@ -55,7 +23,7 @@ body {
 .ie6 body,
 .ie7 body,
 .ie8 body {
-	border-color: #255b17;
+	border-color: #3f175b;
 	border-style: solid;
 	border-width: 0 1px;
 }
@@ -65,7 +33,7 @@ body {
 }
 
 a:link, a:visited, a:hover {
-	color: #48802c;
+	color: #6e13bf;
 }
 
 a:hover, a:active {
@@ -73,7 +41,7 @@ a:hover, a:active {
 }
 
 h1 {
-	color: #48802c;
+	color: #6e13bf;
 	font-weight: normal;
 	font-size: 1.25em;
 	margin: 0.8em 0 0.3em 0;
@@ -89,12 +57,9 @@ img {
 
 /* GENERAL */
 
-#grailsLogo a {
+#psLogo a {
 	display: inline-block;
 	margin: 1em;
-}
-
-.content {
 }
 
 .content h1 {
@@ -105,20 +70,6 @@ img {
 
 .scaffold-list h1 {
 	border: none;
-}
-
-.footer {
-	background: #abbf78;
-	color: #000;
-	clear: both;
-	font-size: 0.8em;
-	margin-top: 1.5em;
-	padding: 1em;
-	min-height: 1em;
-}
-
-.footer a {
-	color: #255b17;
 }
 
 .spinner {
@@ -134,73 +85,7 @@ img {
 
 /* NAVIGATION MENU */
 
-.nav {
-	background-color: #efefef;
-	padding: 0.5em 0.75em;
-	   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
-	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
-	        box-shadow: 0 0 3px 1px #aaaaaa;
-	zoom: 1;
-}
 
-.nav ul {
-	overflow: hidden;
-	padding-left: 0;
-	zoom: 1;
-}
-
-.nav li {
-	display: block;
-	float: left;
-	list-style-type: none;
-	margin-right: 0.5em;
-	padding: 0;
-}
-
-.nav a {
-	color: #666666;
-	display: block;
-	padding: 0.25em 0.7em;
-	text-decoration: none;
-	   -moz-border-radius: 0.3em;
-	-webkit-border-radius: 0.3em;
-	        border-radius: 0.3em;
-}
-
-.nav a:active, .nav a:visited {
-	color: #666666;
-}
-
-.nav a:focus, .nav a:hover {
-	background-color: #999999;
-	color: #ffffff;
-	outline: none;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-}
-
-.no-borderradius .nav a:focus, .no-borderradius .nav a:hover {
-	background-color: transparent;
-	color: #444444;
-	text-decoration: underline;
-}
-
-.nav a.home, .nav a.list, .nav a.create {
-	background-position: 0.7em center;
-	background-repeat: no-repeat;
-	text-indent: 25px;
-}
-
-.nav a.home {
-	background-image: url(../images/skin/house.png);
-}
-
-.nav a.list {
-	background-image: url(../images/skin/database_table.png);
-}
-
-.nav a.create {
-	background-image: url(../images/skin/database_add.png);
-}
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
 
@@ -283,7 +168,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .required-indicator {
-	color: #48802C;
+	color: #6e13bf;
 	display: inline-block;
 	font-weight: bold;
 	margin-left: 0.3em;
@@ -370,7 +255,7 @@ fieldset.embedded legend {
 
 /* form fields with errors */
 
-.error input, .error select, .error textarea {
+/* .error input, .error select, .error textarea {
 	background: #fff3f3;
 	border-color: #ffaaaa;
 	color: #cc0000;
@@ -380,21 +265,21 @@ fieldset.embedded legend {
 	   -moz-box-shadow: 0 0 0.5em #ffaaaa;
 	-webkit-box-shadow: 0 0 0.5em #ffaaaa;
 	        box-shadow: 0 0 0.5em #ffaaaa;
-}
+} */
 
 /* same effects for browsers that support HTML5 client-side validation (these have to be specified separately or IE will ignore the entire rule) */
 
-input:invalid, select:invalid, textarea:invalid {
+/* input:invalid, select:invalid, textarea:invalid {
 	background: #fff3f3;
 	border-color: #ffaaaa;
 	color: #cc0000;
-}
+} */
 
-input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
+/* input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 	   -moz-box-shadow: 0 0 0.5em #ffaaaa;
 	-webkit-box-shadow: 0 0 0.5em #ffaaaa;
 	        box-shadow: 0 0 0.5em #ffaaaa;
-}
+} */
 
 /* TABLES */
 
@@ -476,7 +361,7 @@ th.desc a {
 }
 
 th:hover, tr:hover {
-	background: #E1F2B6;
+	background: #ecd5f7;
 }
 
 /* PAGINATION */

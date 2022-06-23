@@ -16,6 +16,11 @@ class ModuloSpec extends Specification {
     }
 
     void "test toString"() {
-        
+        when: "Un modulo tiene una inclinación y un tipo"
+            def modulo = new Modulo(tipo:'rail',
+                                    inclinacion: 'flat')
+
+        then: "El método toString los combinará."
+            modulo.toString() == 'flat : rail'
     }
 }

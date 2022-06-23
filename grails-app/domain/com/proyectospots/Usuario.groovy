@@ -24,6 +24,6 @@ class Usuario {
         apellido()
         email()
         password()
-        admin()
+        admin nullable:true
     }
 }

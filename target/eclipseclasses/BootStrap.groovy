@@ -4,7 +4,8 @@ class BootStrap {
 
     def init = { servletContext ->
 
-        new Modulo(tipo: 'Cajón (hubba ledge)',
+        if(!Spot.get(1)){
+            new Modulo(tipo: 'Cajón (hubba ledge)',
                     inclinacion: 'plano',
                     descripcion:'Cajón con esquina de 90º paralelo al suelo.').save()
 
@@ -33,10 +34,11 @@ class BootStrap {
         def spot1 = new Spot(nombre: 'Circuito pumptrack',
                             tipo: 'Pumptrack',
                             descripcion: 'Circuito de iniciación para patines, bicis, skateboards, etc.',
+                            web: 'https://www.youtube.com/watch?v=TehH0kE-UdQ',
                             provincia: 'Lleida',
                             direccion: 'Alpicat',
                             fechaPublicacion: new Date(),
-                            creador: Usuario.findByUsuario('GoodLvck'))
+                            publicador: Usuario.findByUsuario('GoodLvck'))
         
         if(!spot1.save()){
             spot1.errors.allErrors.each{error ->
@@ -54,10 +56,11 @@ class BootStrap {
                                              miniramp. Pista de patinaje con miniramp. Pista de patinaje 
                                              con miniramp. Pista de patinaje con miniramp. Pista de 
                                              patinaje con miniramp.''',
+                            web: 'https://www.facebook.com/skatepark.almacelles',
                             provincia: 'Lleida',
                             direccion: 'Calle de almacelles',
                             fechaPublicacion: new Date(),
-                            creador: Usuario.findByUsuario('ProSkater'))
+                            publicador: Usuario.findByUsuario('ProSkater'))
         
         if(!spot2.save()){
             spot2.errors.allErrors.each{error ->
@@ -66,20 +69,15 @@ class BootStrap {
         }
 
         def u1 = Usuario.findByUsuario('ProSkater')
-
         u1.addToSpotsFavoritos(Spot.findByNombre('Skatepark Almacelles'))
         u1.addToSpotsFavoritos(Spot.findByNombre('Circuito pumptrack'))
-
         u1.save()
 
         def s1 = Spot.findByNombre('Skatepark Almacelles')
         s1.addToModulos(Modulo.findByTipo('Cajón (hubba ledge)'))
         s1.addToModulos(Modulo.findByTipo('Eurogap'))
         s1.save()
-
-
-
-        // s1.addC
+        }
 
     }
 

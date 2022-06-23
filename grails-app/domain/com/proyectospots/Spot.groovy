@@ -6,25 +6,27 @@ class Spot {
     String direccion
     String descripcion
     String tipo 
+    String web
     Date fechaPublicacion
-    Usuario creador
-
-    // Empresa contructora / relación 'construccion'
-    // HasMany mensajes
+    Usuario publicador
 
     String toString(){
         "$nombre, $provincia"
     }
 
-    static hasMany = [modulos : Modulo]
+    static hasMany = [modulos : Modulo,
+                    valoraciones : Valoracion]
 
     static constraints = {
         nombre()
         tipo()
-        descripcion maxSize:5000
+        descripcion maxSize:5000, nullable:true
+        modulos nullable:true
+        web blank:true, url:true, nullable:true
         provincia()
         direccion()
         fechaPublicacion()
-        creador()
+        publicador()
+        valoraciones nullable:true
     }
 }
